@@ -1,0 +1,49 @@
+/* Navigation
+--------------------------------------------- */
+@import "navigation/navigation";
+
+/* Posts and pages
+--------------------------------------------- */
+@import "content/posts-and-pages";
+
+/* Comments
+--------------------------------------------- */
+@import "comments/comments";
+
+/* Widgets
+--------------------------------------------- */
+@import "widgets/widgets";
+
+/* Media
+--------------------------------------------- */
+@import "media/media";
+
+/* Captions
+--------------------------------------------- */
+@import "media/captions";
+
+/* Galleries
+--------------------------------------------- */
+@import "media/galleries";
+
+/* Pages
+--------------------------------------------- */
+@import "pages/2022-precent/header";
+@import "pages/about/about-general";
+//isnide about
+@import "pages/about//news-component";
+@import "pages/contact/general-contact";
+@import "pages/news/gerneral-news";
+@import "pages/exhibitons/general-exhibitions";
+
+/* sidebar
+--------------------------------------------- */
+@import "sidebar/main-sidebar";
+@import "sidebar/styles-sidebar";
+/* menus
+--------------------------------------------- */
+@import "menu/mobile.scss";
+/* hover-state
+--------------------------------------------- */
+@import "hoverstate-pages/hover-state";
+

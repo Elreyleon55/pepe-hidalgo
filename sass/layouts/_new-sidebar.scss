@@ -1,0 +1,28 @@
+
+@media (min-width: 50rem) {
+  .site-header{
+    display: none;
+  }
+  .container-layout{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    ". page-title"
+    "side-bar site-content";
+  }
+  
+  .page-title{
+    grid-area: page-title;
+    margin-top: 2%;
+  }
+  .container-sidebar{
+    grid-area: side-bar;
+    grid-row: 1/4;
+  }
+  .mansory-container{
+    grid-area: site-content;  
+    margin-left: 2%;
+  }
+}
+
+

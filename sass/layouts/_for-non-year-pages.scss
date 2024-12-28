@@ -1,0 +1,22 @@
+
+@media (min-width: 50rem) {
+  .site-header{
+    display: none;
+  }
+  .container-layout-non-pages{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "side-bar site-content";
+  }
+  
+  .container-sidebar{
+    grid-area: side-bar;
+    grid-row: 1/4;
+  }
+  .container-content{
+    grid-area: site-content;  
+    margin-left: 5%;
+  }
+}
+

@@ -1,0 +1,56 @@
+//main container styles
+.container-menu-mobile{
+  display: flex;
+  justify-content: space-between;
+}
+
+//main navigation styles
+.main-navigation {
+  align-content: center;
+ 
+}
+
+//hamburger menu 
+.menu-toggle{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  svg{
+    width: 75%;
+  }
+}
+
+//logo styles
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+
+//list style color change
+.menu-mobile-view-container{
+
+  .menu{
+    margin-top: 7px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: white;
+    padding: 2% 10%;
+    
+      li{
+       margin-top: 2rem;
+       border-bottom: solid;
+       a{
+         color: black;
+       }
+      }
+    
+  }
+}
+
+//navigation toggled styles
+
+

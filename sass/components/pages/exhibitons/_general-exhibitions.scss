@@ -1,0 +1,20 @@
+.news-work-process-images-exhibitions{
+  
+display: grid;
+grid-template-columns: 50% 50%;
+grid-template-rows: 1fr 1fr;
+gap: 5%;
+}
+
+.container-image-gallery{
+  width: fit-content;
+  max-width: 90%;
+}
+
+@media (max-width: 50rem) {
+  .news-work-process-images-exhibitions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+}

@@ -1,0 +1,18 @@
+.container-content-continue-contact{
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-areas: 
+  "first-area second-area";
+}
+
+.contact-info{
+  padding: 2rem;
+}
+
+@media (max-width: 50rem) {
+  .container-content-continue-contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+}

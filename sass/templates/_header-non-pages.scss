@@ -1,0 +1,47 @@
+.header-non-pages{
+  display: grid;  
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 
+  "title-info image-header";
+  align-items: center;
+  margin-top: 0.75rem;
+}
+.header-non-pages::after{
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  grid-column: 1 / 4;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.title-info{
+  grid-area: title-info;
+  h2{
+    margin: 0;
+  }
+}
+
+.image-header{
+  grid-area: image-header;
+  margin-left: 15%;
+}
+
+@media (max-width: 50rem){
+  .image-header{
+    margin: 0;
+  }
+  .header-non-pages{
+    display: flex;
+    flex-direction: column;
+  }
+  .header-non-pages::after {
+    display: none;
+  }
+  .work-process::after {
+   display: none;
+  }
+  .awards-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

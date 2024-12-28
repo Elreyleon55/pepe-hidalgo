@@ -1,0 +1,66 @@
+
+.work-process{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 
+  "left-info right-info";
+  }
+  .work-process::after{
+    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+    grid-column: 1 / 4;
+    text-align: center;
+    margin: 5% 0;
+  }
+
+
+  .title-info-work-process{
+    grid-area: left-info;
+  }
+  .news-work-process-images{
+    grid-area: right-info;
+    padding: 15%;
+    margin-left: 15%;
+  }
+
+
+  .awards-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "left-info-2 right-info-2";
+  }
+  .title-info-awards{
+    grid-area: left-info-2;
+  }
+  .image-gallery-awards{
+    display: right-info-2;
+    padding: 15%;
+    margin-left: 15%;
+  }
+
+
+@media (max-width: 50rem){
+  .header-non-pages-contact::after {
+   display: none;
+}
+
+  .title-news{
+    display: none;
+  }
+  .work-process{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .news-work-process-images{
+    margin: 0;
+    padding: 10%;
+  
+  }
+
+  .image-gallery-awards{
+    padding: 10%;
+    margin: 0;
+  }
+}
+ 

@@ -1,0 +1,42 @@
+.header-non-pages-contact{
+  margin-top: 0.80rem;
+}
+.header-non-pages-contact::after{
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  margin: 10% 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.title-info-contact{
+  display: flex;
+  gap: 10%;
+  h2{
+    margin: 0;
+  }
+  .info{
+    width: 90%;
+    p{
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 50rem){
+  .header-non-pages-contact{
+    display: flex;
+    flex-direction: column;
+  }
+  .title-info-contact{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    .info{
+      margin-top: 5%;
+    }
+  }
+  .header-non-pages-contact::after {
+    display: none;
+}
+}

@@ -1,0 +1,15 @@
+body{
+  display: grid;
+  grid-template-columns: 2% 96% 2%;
+  grid-template-areas: ". site . ";
+  
+}
+.site-header{
+  margin-top: 0.5rem;
+}
+
+
+.site{
+  grid-area: site;
+
+}
