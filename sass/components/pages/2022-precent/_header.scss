@@ -64,15 +64,19 @@
     }
     ul{
       li{
-        transition: padding-left 0.2s ease-in-out ;
+        a{
+          transition: padding 0.2s ease-in-out ;
+        }
       }
     }
     ul {
       li:hover{
-        background-color: black;
-        padding-left: 15px;
-        a{
+        // background-color: black;
+        // padding-left: 15px;
+        a:hover{
+          background-color: black;
           color: white;
+          padding: 0.2rem 0.7rem;
         }
       }
     }

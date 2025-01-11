@@ -25,58 +25,46 @@ get_header();
       <?php get_template_part('/template-parts/template-header-non-pages-diptych') ?>
 
       <div class="container-content-continue">
-        <section class="work-process">
-          <?php
-          if (have_rows('section_title')):
-            while (have_rows('section_title')) : the_row();
-          ?>
-              <div class="title-info-work-process">
-                <h2><?php echo get_sub_field('section_title') ?></h2>
-                <p><?php echo get_sub_field('section_content') ?></p>
+        <?php
+        $args = array(
+          'post_type'      => 'pah-diptych',
+          'posts_per_page' => -1,
+          'orderby'        => 'title',
+          'order'          => 'ASC',
+        );
+        $student_query = new WP_Query($args);
+
+        if ($student_query->have_posts()) : ?>
+
+          <div class="collaboration-list">
+            <?php while ($student_query->have_posts()) : $student_query->the_post(); ?>
+              <div class="title-of-section">
+                <h2><?php the_title() ?></h2>
               </div>
-              <div class="news-work-process-images">
-                <?php
-                if (have_rows('news_info')):
-                  while (have_rows('news_info')) : the_row();
-                ?>
-                    <article class="title-news">
-                      <h3><?php echo get_sub_field('news_title') ?></h3>
-                      <p><?php echo get_sub_field('news_content') ?></p>
-                      <a href="<?php echo esc_attr(get_field('instagram_icon')); ?>"><?php get_template_part('/media/icon-instagram') ?></a>
-                      <a href="<?php echo esc_attr(get_field('titok_icon')); ?>"><?php get_template_part('/media/icon-tik-tok') ?></a>
-                    <?php endwhile; ?>
-                  <?php endif; ?>
-                    </article>
-                    <div class="container-image-gallery">
-                      <?php $image = get_sub_field('gallery_img');
-                      echo wp_get_attachment_image($image, 'full'); ?>
+              <div class="repeater-field-inside-collaborations">
+                <?php if (have_rows('repeater_field_for_diptych_type')):
+                  while (have_rows('repeater_field_for_diptych_type')) : the_row(); ?>
+                    <div class="title-info">
+                      <h2><?php echo get_sub_field('name_of_the_panting_diptych') ?></h2>
+                      <h3><?php echo get_sub_field('the_year_of_the_painting_diptych'); ?></h3>
                     </div>
+                    <div data-aos="fade-left">
+                      <div class="image-header">
+                        <?php $image = get_sub_field('image_of_the_diptych'); ?>
+                        <?php echo wp_get_attachment_image($image, 'full'); ?>
+                      </div>
+                    </div>
+                  <?php endwhile; ?>
+                <?php endif; ?>
               </div>
+
             <?php endwhile; ?>
-          <?php endif; ?>
+          </div>
 
-        </section>
+        <?php else : ?>
+          <p>No collaborations found</p>
+        <?php endif; ?>
 
-        <section class="awards-section">
-          <?php
-          if (have_rows('award_section')):
-            while (have_rows('award_section')) : the_row();
-          ?>
-              <div class="title-info-awards">
-                <h2><?php echo get_sub_field('section_title') ?></h2>
-                <p><?php echo get_sub_field('section_content') ?></p>
-              </div>
-              <div class="image-gallery-awards">
-                <?php $image = get_sub_field('gallery_image');
-                echo wp_get_attachment_image($image, 'full'); ?>
-              </div>
-            <?php endwhile; ?>
-          <?php endif; ?>
-        </section>
-
-        <section class="newsletter-section">
-
-        </section>
 
       </div>
 

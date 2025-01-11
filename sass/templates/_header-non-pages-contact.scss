@@ -1,5 +1,5 @@
 .header-non-pages-contact{
-  margin-top: 0.80rem;
+  margin-top: 1rem;
 }
 .header-non-pages-contact::after{
   content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
@@ -11,6 +11,7 @@
 
 .title-info-contact{
   display: flex;
+  flex-direction: column;
   gap: 10%;
   h2{
     margin: 0;
@@ -39,4 +40,8 @@
   .header-non-pages-contact::after {
     display: none;
 }
+}
+
+.container-content{
+  margin-top: 1rem;
 }

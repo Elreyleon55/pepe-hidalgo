@@ -54,25 +54,26 @@ get_header();
 						if (have_rows('news_content_repeater_field')):
 							while (have_rows('news_content_repeater_field')) : the_row();
 						?>
-
-								<div class="title-info-work-process">
-									<div class="images-news-page">
-										<div class="container-image-gallery">
-											<?php $image = get_sub_field('image_for_content_box_news');
-											echo wp_get_attachment_image($image, 'full'); ?>
+								<div data-aos="zoom-in">
+									<div class="title-info-work-process-news">
+										<div class="images-news-page">
+											<div class="container-image-gallery">
+												<?php $image = get_sub_field('image_for_content_box_news');
+												echo wp_get_attachment_image($image, 'full'); ?>
+											</div>
 										</div>
+										<h2><?php echo get_sub_field('title_for_content_box_news') ?></h2>
+										<p><?php echo get_sub_field('text_area_for_content_box_news') ?></p>
+										<?php
+										$link = get_sub_field('link_for_content_box_news');
+										if ($link):
+											$link_url = $link['url'];
+											$link_title = $link['title'];
+											$link_target = $link['target'] ? $link['target'] : '_self';
+										?>
+											<a class="button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+										<?php endif; ?>
 									</div>
-									<h2><?php echo get_sub_field('title_for_content_box_news') ?></h2>
-									<p><?php echo get_sub_field('text_area_for_content_box_news') ?></p>
-									<?php
-									$link = get_sub_field('link_for_content_box_news');
-									if ($link):
-										$link_url = $link['url'];
-										$link_title = $link['title'];
-										$link_target = $link['target'] ? $link['target'] : '_self';
-									?>
-										<a class="button" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-									<?php endif; ?>
 								</div>
 
 							<?php endwhile; ?>

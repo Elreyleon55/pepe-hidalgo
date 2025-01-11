@@ -1,12 +1,25 @@
 .container-content-continue-contact{
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns:  1fr; 
   grid-template-areas: 
   "first-area second-area";
+  .info-contact-second{
+    p{
+      width: 76%;
+    }
+  }
 }
 
 .contact-info{
   padding: 2rem;
+}
+
+.header-non-pages-contact{
+  .info{
+    p{
+      width: 80%;
+    }
+  }
 }
 
 @media (max-width: 50rem) {
@@ -14,5 +27,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+
+.header-non-pages-contact{
+  .title-info-contact{
+    text-align: center;
+    .info{
+      width: 100%;
+      p{
+        width: 100%;
+      }
+    }
   }
+}
+
 }

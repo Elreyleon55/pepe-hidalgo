@@ -67,6 +67,12 @@
 			}
 		}
 		li:nth-child(10){
+			a{
+				transform: translateX(0px);
+				text-decoration: dotted;
+			}
+		}
+		li:nth-child(11){
 			border: none;
     display: inline;
     position: absolute;
@@ -81,7 +87,7 @@
 				}
 			}
 		}
-		li:nth-child(11){
+		li:nth-child(12){
 			border: none;
     display: inline;
     position: absolute;
@@ -210,17 +216,60 @@
 		}
 	}
 	li:nth-child(10){
+		display: flex;
+    justify-content: space-between;
 		a{
-			transform: translateY(0px);
+			transform: translateX(10px);
+			text-decoration: dotted;
 		}
 	}
-	li:nth-child(11){
-		a{
-			transform: translateY(0px);
-		}
+	li:nth-child(10)::after{
+		content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/downwards-errow.svg);
+		animation: errow-animation 1s infinite alternate;
 	}
-
+	
+		
 }
+
+.container-layout{
+	.container-sidebar{
+		.widget-area{
+			.wp-block-group{
+				.wp-block-page-list {
+					.current-menu-item {
+						a{
+							color: #BC8D01; /* Custom color for the current page */
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+//animation
+
+@keyframes errow-animation{
+	from{
+		transform: translateY(0px);
+	}
+	to{
+		transform: translateY(-10px);
+	}
+	
+}
+
+
+
+
+
 .menu-toggle,
 .main-navigation.toggled svg {
 	animation: hamburger ease-in-out 0.9s;
@@ -285,4 +334,21 @@
 }
 
 
+@media (max-width: 30.5rem ){
 
+	.main-navigation{
+		ul{
+			li:nth-child(11){
+			left: 76%;
+			}
+		}
+	}
+}
+
+
+
+.wp-block-page-list{
+	.wp-block-pages-list__item:hover{
+			background-color: none;
+	}
+}

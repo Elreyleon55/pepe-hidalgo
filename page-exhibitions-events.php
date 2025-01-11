@@ -52,9 +52,11 @@ get_header();
 						if (have_rows('repeater_for_gallery_images_exhibition_page')):
 							while (have_rows('repeater_for_gallery_images_exhibition_page')) : the_row();
 						?>
-								<div class="container-image-gallery">
-									<?php $image = get_sub_field('inner_images_exhibitons');
-									echo wp_get_attachment_image($image, 'full'); ?>
+								<div data-aos="fade-left">
+									<div class="container-image-gallery">
+										<?php $image = get_sub_field('inner_images_exhibitons');
+										echo wp_get_attachment_image($image, 'full'); ?>
+									</div>
 								</div>
 							<?php endwhile; ?>
 						<?php endif; ?>

@@ -1,20 +1,42 @@
 .news-work-process-images-exhibitions{
-  
 display: grid;
 grid-template-columns: 50% 50%;
 grid-template-rows: 1fr 1fr;
 gap: 5%;
+padding: 5%;
+.container-image-gallery{
+  img{
+    transition: transform 0.3s ease;
+  }
+  img:hover{
+    transform: scale(1.2);
+  }
+}
 }
 
 .container-image-gallery{
   width: fit-content;
   max-width: 90%;
 }
+.work-process-exhibitions{
+  margin-bottom: 10%;
+}
+
 
 @media (max-width: 50rem) {
   .news-work-process-images-exhibitions{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  }
+  .news-work-process-images-exhibitions{
+    .container-image-gallery{
+      display: flex;
+      justify-content: center;
+      img{
+        
+        margin-bottom:2rem;
+      }
+    }
   }
 }

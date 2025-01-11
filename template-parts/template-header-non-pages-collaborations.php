@@ -1,18 +1,22 @@
-<div class="header-non-pages-collaborations">
+<div class="header-non-pages">
   <?php
-  if (have_rows('intro_to_content_collaborations')):
-    while (have_rows('intro_to_content_collaborations')) : the_row();
+  $page_id = 1868;
+  // Do something for the page with ID 42
+  if (have_rows('repeater_for_intro_content_collobaoration', $page_id)):
+    while (have_rows('repeater_for_intro_content_collobaoration', $page_id)) : the_row();
   ?>
 
-      <div class="title-info-collaborations">
-        <h2><?php echo get_sub_field('text_to_title'); ?></h2>
+      <div class="title-info">
+        <h1><?php echo get_sub_field('intro_title_colloboration'); ?></h1>
         <div class="info">
-          <p><?php echo get_sub_field('text_to_content') ?></p>
+          <p><?php echo get_sub_field('intro_content_collaborations') ?></p>
         </div>
       </div>
-      <div class="image-header-collaborations">
-        <?php $image = get_sub_field('image_for_content'); ?>
-        <?php echo wp_get_attachment_image($image, 'full'); ?>
+      <div data-aos="zoom-in">
+        <div class="image-header">
+          <?php $image = get_sub_field('intro_image_collaboration'); ?>
+          <?php echo wp_get_attachment_image($image, 'full'); ?>
+        </div>
       </div>
     <?php endwhile; ?>
   <?php endif; ?>

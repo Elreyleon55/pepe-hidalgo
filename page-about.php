@@ -52,9 +52,11 @@ get_header();
 										<?php endwhile; ?>
 									<?php endif; ?>
 										</article>
-										<div class="container-image-gallery">
-											<?php $image = get_sub_field('gallery_img');
-											echo wp_get_attachment_image($image, 'full'); ?>
+										<div data-aos="fade-left">
+											<div class="container-image-gallery">
+												<?php $image = get_sub_field('gallery_img');
+												echo wp_get_attachment_image($image, 'full', false, ['class' => 'news-images']); ?>
+											</div>
 										</div>
 							</div>
 						<?php endwhile; ?>
@@ -71,24 +73,19 @@ get_header();
 								<h2><?php echo get_sub_field('section_title') ?></h2>
 								<p><?php echo get_sub_field('section_content') ?></p>
 							</div>
-							<div class="image-gallery-awards">
-								<?php $image = get_sub_field('gallery_image');
-								echo wp_get_attachment_image($image, 'full'); ?>
+							<div data-aos="fade-left">
+								<div class="image-gallery-awards">
+									<?php $image = get_sub_field('gallery_image');
+									echo wp_get_attachment_image($image, 'full', false, ['class' => 'news-images']); ?>
+								</div>
 							</div>
 						<?php endwhile; ?>
 					<?php endif; ?>
 				</section>
 
-				<section class="newsletter-section">
 
-				</section>
 
 			</div>
-
-
-
-
-
 
 
 			<?php
@@ -108,5 +105,4 @@ get_header();
 </main><!-- #main -->
 
 <?php
-
 get_footer();

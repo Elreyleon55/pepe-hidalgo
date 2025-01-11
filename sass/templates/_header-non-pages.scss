@@ -3,7 +3,6 @@
   grid-template-columns: 50% 50%;
   grid-template-areas: 
   "title-info image-header";
-  align-items: center;
   margin-top: 0.75rem;
 }
 .header-non-pages::after{
@@ -23,6 +22,58 @@
 .image-header{
   grid-area: image-header;
   margin-left: 15%;
+  img{
+
+    align-content: center;
+  }
+}
+
+.header-non-pages{
+  .container-for-center-images{
+    align-content: center;
+  }
+  .title-info{
+    padding: 1rem;
+  }
+  .title-info::after{
+    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/downwards-errow.svg);
+    animation: errow-animation-new 1s infinite alternate;
+    position: absolute;
+    
+  }
+}
+
+// .header-non-pages{
+//   .title-info{
+//     .info{
+//       a{
+//         color: black;
+//         text-decoration: underline;
+//       }
+//       .button-link{
+//         margin-bottom: 1.5rem ;
+//       }
+//     }
+//   }
+// }
+
+.header-non-pages-collaborations{
+  .title-info-collaborations{
+    padding: 1rem;
+  }
+
+}
+
+
+
+@keyframes errow-animation-new{
+	from{
+		transform: translateY(0px);
+	}
+	to{
+		transform: translateY(-10px);
+	}
+	
 }
 
 @media (max-width: 50rem){
@@ -44,4 +95,12 @@
     flex-direction: column;
     justify-content: center;
   }
+  .header-non-pages{
+  
+    .title-info::after{
+      display: none;
+    }
+  }
+
+
 }

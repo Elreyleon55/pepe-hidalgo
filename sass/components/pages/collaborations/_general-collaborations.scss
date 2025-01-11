@@ -1,0 +1,41 @@
+.collaboration-list{
+  text-align: center;
+  img{
+    text-align: center;
+    max-width: 80%;
+  }
+  .image-header {
+    margin: 0;
+    padding: 10%;
+  }
+  .name-of-collaborator{
+    h2{
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.collaboration-list::after{
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  margin: 5% 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 50rem) {
+  .collaboration-list::after{
+    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
+    margin: 5% 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .collaboration-list{
+    .image-header {
+      padding: 5%;
+    }
+  }
+}

@@ -5,7 +5,7 @@
   ?>
 
       <div class="title-info-collaborations">
-        <h2><?php echo get_sub_field('tititle_for_content_news'); ?></h2>
+        <h1><?php echo get_sub_field('tititle_for_content_news'); ?></h1>
         <div class="info">
           <p><?php echo get_sub_field('content_for_content_for_news') ?></p>
         </div>

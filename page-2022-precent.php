@@ -36,31 +36,93 @@ get_header();
 			?>
 		</div>
 
-		<div class="mansory-container">
-			<!-- array_gallery_art -->
+		<div class="intro-container">
+			<!-- Intro content to paintings -->
+			<div class="intro-content-precent">
+				<?php get_template_part('/template-parts/front-page-latest-slider') ?>
+			</div>
 			<?php
+
+				$horizontal_images = [];
+				$vertical_images = [];
+
 				$images = get_field('array_gallery_art');
 				if ($images): ?>
-				<div class="grid" id="images-loaded-gallery">
-					<?php foreach ($images as $image):
-						$image_url = wp_get_attachment_url($image);
-					?>
-						<div class="grid-sizer"></div>
-						<div class="grid-item">
-							<div id="lightgallery">
-								<div class="item" data-lg-size="1600-2400">
-									<img src="<?php
-														echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?> " loading="lazy" />
+
+				<?php foreach ($images as $image):
+						$image_id = $image['ID'];
+						$image_meta = wp_get_attachment_metadata($image_id);
+						$width = $image_meta['width'] ?? 0;
+						$height = $image_meta['height'] ?? 0;
+
+						if ($width > $height) {
+							$horizontal_images[] = $image_id;
+						} else {
+							$vertical_images[] = $image_id;
+						}
+
+						$image_url = wp_get_attachment_url($image_id);
+				?>
+				<?php endforeach; ?>
+
+				<div class="grid-precent" id="images-loaded-gallery">
+					<section class="horizontal-paintings">
+						<div>
+							<h2>Horizontal Paintings</h2>
+						</div>
+						<div class="grid-item-precent-horizontal">
+							<article class="inner-item-precent-horizontal">
+								<div class="images">
+									<div class="inner-images-grid" id="lightgallery-vertical">
+										<?php foreach ($horizontal_images as $horizontal_id):
+											$image_caption_horizontal = wp_get_attachment_caption($horizontal_id);
+											$attachment_url = wp_get_attachment_url($horizontal_id);
+										?>
+											<a href="<?php echo esc_url($attachment_url) ?>" data-lg-size="1600-2400" data-sub-html="<?php echo '<p>' . nl2br(esc_html($image_caption_horizontal)) . '</p>' ?>">
+												<?php echo wp_get_attachment_image($horizontal_id, 'medium'); ?>
+
+												<?php if ($image_caption_horizontal) {
+													echo '<p>' . nl2br(esc_html($image_caption_horizontal)) . '</p>';
+												}
+												?>
+											</a>
+										<?php endforeach; ?>
+									</div>
 								</div>
-								<p><?php echo esc_html($image['caption']); ?></p>
+							</article>
+						</div>
+
+					</section>
+
+					<section class="vertical-paintings">
+						<div>
+							<h2>Vertical Paintings</h2>
+						</div>
+						<div class="grid-item-precent-vertial">
+							<div class="inner-item-precent-vertical" data-lg-size="1600-2400">
+								<div class="images">
+									<div class="inner-images-grid" id="lightgallery">
+										<?php foreach ($vertical_images as $vertical_id):
+											$image_caption_vertical = wp_get_attachment_caption($vertical_id);
+											$attachment_url_vertical = wp_get_attachment_url($vertical_id);
+										?>
+											<a href="<?php echo esc_url($attachment_url_vertical) ?>" data-lg-size="1600-2400" data-sub-html="<?php echo '<p>' . nl2br(esc_html($image_caption_vertical)) . '</p>' ?>">
+												<?php echo wp_get_attachment_image($vertical_id, 'medium'); ?>
+												<?php if ($image_caption_vertical) {
+													echo '<p>' . nl2br(esc_html($image_caption_vertical)) . '</p>';
+												}
+												?>
+											</a>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							<?php endif; ?>
+
 							</div>
 						</div>
-						<div class="grid-item grid-item--width2"></div>
-					<?php endforeach; ?>
+					</section>
 				</div>
-			<?php endif; ?>
-
-		<?php
+			<?php
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if (comments_open() || get_comments_number()) :
@@ -68,7 +130,7 @@ get_header();
 				endif;
 
 			endwhile; // End of the loop.
-		?>
+			?>
 		</div>
 	</div>
 

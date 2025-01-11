@@ -1,0 +1,98 @@
+.front-page-leatest-image{
+  display: grid;
+  grid-template-columns: 1fr 50% 1fr;
+  grid-template-rows: 1fr 10%;
+  grid-template-areas: 
+  "left-images center-piece right-images"
+  "left-images . right-images";
+}
+
+.front-page-leatest-image::after{
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  grid-column: 1 / 4;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.banner-image{
+  img{
+    width: 100%;
+    height: cover;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+
+.inner-png-left{
+grid-area: left-images;
+grid-row: 1/3;
+display: flex;
+position: relative;
+.container-for-left-side-images{
+  img{
+    position: absolute;
+  }
+}
+.container-for-left-side-images:nth-child(1){
+ img{
+  width: 74%;
+  left: 0.875rem;
+  bottom: 0;
+  z-index: 10;
+ }
+}
+.container-for-left-side-images:nth-child(2){
+  img{
+    width: 95%;
+    right: -21%;
+    bottom: 0;
+  }
+}
+}
+
+.banner-image{
+  grid-area: center-piece;
+}
+
+.inner-png-right{
+  grid-area: right-images;
+  display: flex;
+  position: relative;
+  .container-for-right-side-images{
+    img{
+      position: absolute;
+    }
+  }
+ 
+   .container-for-right-side-images:nth-child(1){
+     img{
+       right: 31%;
+       bottom: 0;
+       z-index: 5;
+       width: 100%;
+     }
+   }
+   .container-for-right-side-images:nth-child(2){
+     img{
+       right: 0rem;
+       bottom: 0;
+       z-index: 10;
+       width: 70%;
+     }
+   }
+}
+
+
+
+@media (max-width: 50rem){
+  .front-page-leatest-image::after{
+    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
+    margin: 5% 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+ 
+}
+

@@ -26,6 +26,14 @@
 --------------------------------------------- */
 @import "media/galleries";
 
+/* Galleries
+--------------------------------------------- */
+@import "vertical-images/general-vertical-images";
+
+/* Footer
+--------------------------------------------- */
+@import "footer/general-footer";
+
 /* Pages
 --------------------------------------------- */
 @import "pages/2022-precent/header";
@@ -35,6 +43,10 @@
 @import "pages/contact/general-contact";
 @import "pages/news/gerneral-news";
 @import "pages/exhibitons/general-exhibitions";
+@import "pages/video-works/general-video-works";
+@import "pages/collaborations/general-collaborations";
+@import "pages/diptych//general-diptych";
+@import "pages/2022-precent/general-precent";
 
 /* sidebar
 --------------------------------------------- */

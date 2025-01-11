@@ -159,6 +159,12 @@ function custom_inline_styles()
 					.site{
 						margin-top: 0;
 					}	
+						.site-footer{
+						display:none;
+						}
+						.site-header{
+						display: none;
+						}
 			</style>';
 	}
 }
@@ -197,6 +203,7 @@ function custom_styles_for_contact_page()
 	}
 }
 add_action('wp_head', 'custom_styles_for_contact_page');
+
 
 function custom_styles_for_video_works_page()
 {
@@ -239,15 +246,68 @@ function custom_styles_for_exhibition_page()
 					.site-header{
 					display: block;
 			}
+					.title-info-work-process::after{
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  margin: 10% 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header-non-pages{
+  .title-info{
+    .info{
+		p{
+		margin-bottom: 0;
+		}
+      a{
+        color: black;
+        text-decoration: underline;
+      }
+      .button-link{
+        margin-bottom: 2rem ;
+      }
+    }
+  }
+}
 
 			@media (min-width: 50rem) {
     .site-header {
         display: none;
     }
+			}		
+			@media (max-width: 50rem) {
+    .title-info-work-process::after {
+		display: none;
+	}
+			}		
+	
+
 			</style>';
 	}
 }
 add_action('wp_head', 'custom_styles_for_exhibition_page');
+
+function custom_styles_for_collaborations_page()
+{
+	if (is_page('collaborations')) { // Replace 'about' with your page slug or ID
+		echo '<style>
+					.site-header{
+					display: block;
+			}
+
+			@media (min-width: 50rem) {
+    .site-header {
+        display: none;
+    }
+
+		
+			</style>';
+	}
+}
+add_action('wp_head', 'custom_styles_for_collaborations_page');
+
+
 
 
 
@@ -270,28 +330,38 @@ function pepe_hidalgo_scripts()
 		wp_enqueue_script('swiper-settings', get_template_directory_uri() . '/js/swiper-settings.js', array('swiper-scripts'), _S_VERSION, array('strategy' => 'defer'));
 		wp_dequeue_style('/sass/layouts/_grid-layout.scss');
 	}
-	//continue 
 
 	if ('pepe-hidalgo-website') {
 		wp_dequeue_style('/sass/layouts/_grid-layout.scss');
 	}
 
-
 	if (is_page('2022-precent')) {
-		//this controls the gridlayout for most pages
 		wp_enqueue_style('2022-precent', get_template_directory_uri() . '/sass/layouts/_before-new-sidebar.scss');
-		//this is for the imagesloaded pkg
-		wp_enqueue_script('imagesloaded', '/js/imagesloaded.pkgd.min.js', array('jquery'), null, true, array('strategy' => 'defer'));
-		wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/imagesloaded.settings.js', array('imagesloaded'), null, true, array('strategy' => 'defer'));
-		//this is for the mansonry library that is supposed to work
-		wp_enqueue_style('mansonry-styles', get_template_directory_uri() . '/css/mansonry.css', array(), '1.1.1');
-		wp_enqueue_script('masonry-scripts', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery'), '4.2.2', array('strategy' => 'defer'));
-		wp_enqueue_script('masonry-settings', get_template_directory_uri() . '/js/masonry.settings.js', array('masonry-scripts'), array('jquery'), _S_VERSION, array('strategy' => 'defer'));
-		//this is for the light house library
-		wp_enqueue_style('lighthouse-styles', get_template_directory_uri() . '/css/light-house.css', array(), '1.1.1');
-		wp_enqueue_script('lighthouse-scripts', get_template_directory_uri() . '/js/lightgallery.min.js', array('jquery'), '4.2.2', array('strategy' => 'defer'));
-		wp_enqueue_script('lighthouse-settings', get_template_directory_uri() . '/js/lighthouse-settings.js', array('lighthouse-scripts'), array('jquery'), '4.2.2', array('strategy' => 'defer'));
 	}
+
+	wp_enqueue_style('lighthouse-styles', get_template_directory_uri() . '/css/light-house.css', array(), '1.1.1');
+	wp_enqueue_script('lighthouse-scripts', get_template_directory_uri() . '/js/lightgallery.min.js', array('jquery'), '4.2.2', array('strategy' => 'defer'));
+	wp_enqueue_script('lighthouse-settings', get_template_directory_uri() . '/js/lighthouse-settings.js', array('lighthouse-scripts'), array('jquery'), '4.2.2', array('strategy' => 'defer'));
+	wp_add_inline_script('lighthouse-scripts', 'Lighthouse-scripts.init();');
+
+	wp_enqueue_script('vertical-images', get_template_directory_uri() . '/js/vertical-images.js', array(), null, true);
+
+	wp_enqueue_style('aos-css', get_template_directory_uri() . '/css/aos.css');
+	wp_enqueue_script('aos-js', get_template_directory_uri() . '/js/aos.js', array(), null, true);
+	wp_add_inline_script('aos-js', 'AOS.init();');
+
+	wp_enqueue_style(
+		'pah-googlefonts',
+		'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap',
+		array(),
+		null
+	);
+	wp_enqueue_style(
+		'pah-googlefonts-roboto',
+		'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
+		array(),
+		null
+	);
 }
 add_action('wp_enqueue_scripts', 'pepe_hidalgo_scripts');
 

@@ -1,12 +1,9 @@
 //tunring off the header and footer
 
-.site-header{
-  display: none;
-}
+// .site-header{
+//   display: none;
+// }
 
-.site-footer {
-  display: none;
-}
 
 .swiper{
   border: solid #ededed 24px;
@@ -63,10 +60,10 @@
         border: solid;
         font-size: 3vw;
         transition: color 0.5s ease-in-out;
-        transition: background-color 0.5s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
       }
       a:hover{
-        background-color: #979797;
+        background-color: #181818;
       }
       a:active{
         background-color: #979797;
@@ -88,6 +85,23 @@
 }
 
 
+.hero-inner-container{
+  svg{
+    g{
+      transition: fill 0.1s ease-in-out;
+    }
+    }
+}
+
+.hero-inner-container{
+  svg:hover{
+   g{
+     fill: #c3c3c3;
+   }
+    }
+}
+
+
 @media (min-width: 26rem){
   .hero-social-icons .hero-inner-container {
     svg{
@@ -97,3 +111,4 @@
    
   }
 }
+

@@ -1,41 +1,97 @@
-.grid-item{
-  p{
-    visibility: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+.horizontal-paintings{
+  .inner-images-grid{
+    a{
+      position: relative;
+      overflow: hidden;
+      p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        color: $back_ground_color_pepe;
+        text-align: center;
+        letter-spacing: 0.5px
+      }
+    }
+    transition: background-color 0.3s ease-in-out;
+    img{
+      transition: scale 0.2s ease-in-out;
+    }
+    a:hover{
+      p{
+        opacity: 1;
+        z-index: 10;
+      }
+      img{
+        scale: 1.1;
+      }
+    }
+    a::after{
+      content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.7);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out; 
+    }
+     a:hover::after{
+       opacity: 1;
+      }
   }
 }
-.grid-item::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
 
-}
+//vertical
 
-.grid-item:hover{
-  cursor: pointer;
-  p{
-    transition: visibility 0.3s ease-in-out;
-    visibility: visible;
-    color: white;
-    text-align: center;
-    z-index: 100;
+.vertical-paintings{
+  .inner-images-grid{
+    a{
+      position: relative;
+      overflow: hidden;
+      p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        color: $back_ground_color_pepe;
+        text-align: center;
+        letter-spacing: 0.5px
+      }
+    }
+    transition: background-color 0.3s ease-in-out;
+    img{
+      transition: scale 0.2s ease-in-out;
+    }
+    a:hover{
+      p{
+        opacity: 1;
+        z-index: 10;
+      }
+      img{
+        scale: 1.1;
+      }
+    }
+    a::after{
+      content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.7);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out; 
+    }
+     a:hover::after{
+       opacity: 1;
+      }
   }
 }
-.grid-item:hover::after{
-  transition: opacity 0.3s ease-in-out ;
-  opacity: 0.5;
-  p{
-    visibility: visible;
-  }
-}
-
 
 
