@@ -1,8 +1,11 @@
 .horizontal-paintings{
   .inner-images-grid{
+   
     a{
       position: relative;
-      overflow: hidden;
+      img{
+        overflow: hidden;
+      }
       p{
         position: absolute;
         top: 50%;
@@ -12,20 +15,15 @@
         transition: opacity 0.2s ease-in;
         color: $back_ground_color_pepe;
         text-align: center;
-        letter-spacing: 0.5px
+        letter-spacing: 0.5px;
+        font-size: 2vw;
       }
     }
     transition: background-color 0.3s ease-in-out;
-    img{
-      transition: scale 0.2s ease-in-out;
-    }
     a:hover{
       p{
         opacity: 1;
         z-index: 10;
-      }
-      img{
-        scale: 1.1;
       }
     }
     a::after{
@@ -51,7 +49,6 @@
   .inner-images-grid{
     a{
       position: relative;
-      overflow: hidden;
       p{
         position: absolute;
         top: 50%;
@@ -61,20 +58,15 @@
         transition: opacity 0.2s ease-in;
         color: $back_ground_color_pepe;
         text-align: center;
-        letter-spacing: 0.5px
+        letter-spacing: 0.5px;
+        font-size: 2vw;
       }
     }
     transition: background-color 0.3s ease-in-out;
-    img{
-      transition: scale 0.2s ease-in-out;
-    }
     a:hover{
       p{
         opacity: 1;
         z-index: 10;
-      }
-      img{
-        scale: 1.1;
       }
     }
     a::after{

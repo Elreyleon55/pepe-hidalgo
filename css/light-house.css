@@ -57,14 +57,14 @@
   right: 20px;
 }
 .lg-next:before {
-  content: "\e095";
+  content: "";
 }
 
 .lg-prev {
   left: 20px;
 }
 .lg-prev:after {
-  content: "\e094";
+  content: "";
 }
 
 @-webkit-keyframes lg-right-end {
@@ -205,7 +205,7 @@
   color: #fff;
 }
 .lg-toolbar .lg-close:after {
-  content: "\e070";
+  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/close_24.svg);
 }
 .lg-toolbar .lg-maximize {
   font-size: 22px;
