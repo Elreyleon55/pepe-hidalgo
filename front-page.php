@@ -33,10 +33,10 @@ get_header();
     <?php get_template_part('template-parts/hero-slider'); ?>
     <div class="hero-social-icons">
       <div class="hero-inner-container">
-        <a href="" class="instagram">
+        <a href="https://www.instagram.com/pepehidalgoart/" class="instagram">
           <?php get_template_part('/media/icon-instagram') ?>
         </a>
-        <a href="" class="tik-tok">
+        <a href="https://www.tiktok.com/@pepehidalgoart" class="tik-tok">
           <?php get_template_part('/media/icon-tik-tok') ?>
         </a>
       </div>
