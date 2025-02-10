@@ -8,7 +8,7 @@
 }
 
 .front-page-leatest-image::after{
-  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  content: url(https://pepehidalgo.com/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
   grid-column: 1 / 4;
   text-align: center;
   margin: 5% 0;
@@ -87,7 +87,7 @@ position: relative;
 
 @media (max-width: 50rem){
   .front-page-leatest-image::after{
-    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
+    content: url(https://pepehidalgo.com/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
     margin: 5% 0;
     text-align: center;
     display: flex;

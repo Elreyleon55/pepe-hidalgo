@@ -17,7 +17,7 @@
 
 
 .collaboration-list::after{
-  content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
+  content: url(https://pepehidalgo.com/wp-content/themes/pepe-hidalgo/media/divider-line.svg);
   margin: 5% 0;
   text-align: center;
   display: flex;
@@ -27,7 +27,7 @@
 
 @media (max-width: 50rem) {
   .collaboration-list::after{
-    content: url(http://localhost:8888/pepe-hidalgo-website/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
+    content: url(https://pepehidalgo.com/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
     margin: 5% 0;
     text-align: center;
     display: flex;

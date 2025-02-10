@@ -9,7 +9,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 5%;
       padding: 5%;
-      margin-bottom: 20%;
+      margin-bottom: 50%;
     }
   }
 }
@@ -35,9 +35,10 @@
   .grid-item-precent-vertial{
     .inner-images-grid{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 5%;
       padding: 5%;
+      margin-bottom: 12rem;
     }
   }
 }
@@ -54,6 +55,40 @@
     object-fit: cover;
   }
 }
+
+.horizontal-paintings{
+  .grid-item-precent-horizontal{
+    .inner-images-grid.art-2020-precent{
+      margin-bottom: 75%;
+    }
+    .inner-images-grid.art-2020-2022{
+      margin-bottom: 30%; 
+    }
+    .inner-images-grid.art-2019-before{
+      margin-bottom: 60%;
+    }
+  }
+}
+
+.vertical-paintings{
+  .grid-item-precent-vertial{
+    .inner-images-grid.art-2020-precent-vertical {
+      margin-bottom: 25%;
+    }
+    
+    .inner-images-grid.art-2020-2022-vertical {
+      margin-bottom: 36%;
+    }
+    
+    .inner-images-grid.art-2019-before-vertical{
+      margin-bottom: 33%;
+    }
+  }
+
+}
+
+
+
 
 
 

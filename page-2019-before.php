@@ -73,7 +73,7 @@ get_header();
 						<div class="grid-item-precent-horizontal">
 							<article class="inner-item-precent-horizontal">
 								<div class="images">
-									<div class="inner-images-grid" id="lightgallery-vertical">
+									<div class="inner-images-grid art-2019-before" id="lightgallery-vertical">
 										<?php foreach ($horizontal_images as $horizontal_id):
 											$image_caption_horizontal = wp_get_attachment_caption($horizontal_id);
 											$attachment_url = wp_get_attachment_url($horizontal_id);
@@ -88,6 +88,7 @@ get_header();
 										<?php endforeach; ?>
 									</div>
 								</div>
+
 							</article>
 						</div>
 					</section>
@@ -99,7 +100,7 @@ get_header();
 						<div class="grid-item-precent-vertial">
 							<div class="inner-item-precent-vertical" data-lg-size="1600-2400">
 								<div class="images">
-									<div class="inner-images-grid" id="lightgallery">
+									<div class="inner-images-grid art-2019-before-vertical" id="lightgallery">
 										<?php foreach ($vertical_images as $vertical_id):
 											$image_caption_vertical = wp_get_attachment_caption($vertical_id);
 											$attachment_url_vertical = wp_get_attachment_url($vertical_id);

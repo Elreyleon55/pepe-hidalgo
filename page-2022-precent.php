@@ -73,11 +73,12 @@ get_header();
 						<div class="grid-item-precent-horizontal">
 							<article class="inner-item-precent-horizontal">
 								<div class="images">
-									<div class="inner-images-grid" id="lightgallery-vertical">
+									<div class="inner-images-grid art-2020-precent" id="lightgallery-vertical">
 										<?php foreach ($horizontal_images as $horizontal_id):
 											$image_caption_horizontal = wp_get_attachment_caption($horizontal_id);
 											$attachment_url = wp_get_attachment_url($horizontal_id);
 										?>
+
 											<a href="<?php echo esc_url($attachment_url) ?>" data-lg-size="1600-2400" data-sub-html="<?php echo '<p>' . nl2br(esc_html($image_caption_horizontal)) . '</p>' ?>">
 												<?php echo wp_get_attachment_image($horizontal_id, 'medium'); ?>
 
@@ -86,6 +87,7 @@ get_header();
 												}
 												?>
 											</a>
+
 										<?php endforeach; ?>
 									</div>
 								</div>
@@ -101,11 +103,12 @@ get_header();
 						<div class="grid-item-precent-vertial">
 							<div class="inner-item-precent-vertical" data-lg-size="1600-2400">
 								<div class="images">
-									<div class="inner-images-grid" id="lightgallery">
+									<div class="inner-images-grid art-2020-precent-vertical" id="lightgallery">
 										<?php foreach ($vertical_images as $vertical_id):
 											$image_caption_vertical = wp_get_attachment_caption($vertical_id);
 											$attachment_url_vertical = wp_get_attachment_url($vertical_id);
 										?>
+
 											<a href="<?php echo esc_url($attachment_url_vertical) ?>" data-lg-size="1600-2400" data-sub-html="<?php echo '<p>' . nl2br(esc_html($image_caption_vertical)) . '</p>' ?>">
 												<?php echo wp_get_attachment_image($vertical_id, 'medium'); ?>
 												<?php if ($image_caption_vertical) {
@@ -116,6 +119,7 @@ get_header();
 										<?php endforeach; ?>
 									</div>
 								</div>
+
 							<?php endif; ?>
 
 							</div>

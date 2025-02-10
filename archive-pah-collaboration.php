@@ -49,11 +49,11 @@ get_header();
 											<h3><?php echo get_sub_field('name_of_painting_collaboration') ?></h3>
 											<h4><?php echo get_sub_field('the_year_of_the_colloboration'); ?></h4>
 										</div>
-										<div data-aos="fade-left">
-											<div class="image-header">
-												<?php $image = get_sub_field('the_image_of_the_colloboration'); ?>
-												<?php echo wp_get_attachment_image($image, 'full'); ?>
-											</div>
+										<div class="image-header">
+
+											<?php $image = get_sub_field('the_image_of_the_colloboration'); ?>
+											<?php echo wp_get_attachment_image($image, 'full'); ?>
+
 										</div>
 									<?php endwhile; ?>
 								<?php endif; ?>

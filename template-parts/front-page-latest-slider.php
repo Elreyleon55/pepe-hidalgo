@@ -6,7 +6,7 @@
     ?>
         <div class="container-for-left-side-images">
           <?php $image = get_sub_field('left_side_image'); ?>
-          <?php echo wp_get_attachment_image($image, 'full'); ?>
+          <?php echo wp_get_attachment_image($image, 'medium'); ?>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
@@ -29,7 +29,7 @@
     ?>
         <div class="container-for-right-side-images">
           <?php $image = get_sub_field('right_images'); ?>
-          <?php echo wp_get_attachment_image($image, 'large'); ?>
+          <?php echo wp_get_attachment_image($image, 'medium'); ?>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
