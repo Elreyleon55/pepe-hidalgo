@@ -85,13 +85,21 @@ position: relative;
 
 
 
-@media (max-width: 50rem){
+@media (max-width: 50em){
   .front-page-leatest-image::after{
     content: url(https://pepehidalgo.com/wp-content/themes/pepe-hidalgo/media/line-for-mobile.svg);
     margin: 5% 0;
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+ 
+}
+@media (max-width: 27em){
+  .intro-content-precent{
+    .front-page-leatest-image{
+     display: none;
+    }
   }
  
 }
