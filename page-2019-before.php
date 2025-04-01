@@ -25,9 +25,7 @@ get_header();
 
 				get_template_part('template-parts/content', 'page');
 			?>
-				<article class="promotion-name">
-					<p>BY PEPE HIDALGO</p>
-				</article>
+
 		</div>
 		<div class="container-sidebar">
 			<?php

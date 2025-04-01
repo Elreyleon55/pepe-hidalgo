@@ -48,7 +48,7 @@ get_header();
                       <h2><?php echo get_sub_field('name_of_the_panting_diptych') ?></h2>
                       <h3><?php echo get_sub_field('the_year_of_the_painting_diptych'); ?></h3>
                     </div>
-                    <div data-aos="fade-left">
+                    <div>
                       <div class="image-header">
                         <?php $image = get_sub_field('image_of_the_diptych'); ?>
                         <?php echo wp_get_attachment_image($image, 'full'); ?>
